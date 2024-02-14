@@ -9,7 +9,7 @@ INSERT INTO department (dept_name) VALUES
 -- Seeds for role table
 INSERT INTO role (title, salary, dept_id) VALUES
 ('Sales Manager', 60000, 1),
-('Marketing Coordination', 45000, 2),
+('Marketing Coordination', 45000, 1),
 ('Finance Analyst', 55000, 3),
 ('HR Specialist', 50000, 4),
 ('IT Technician', 48000, 5);
