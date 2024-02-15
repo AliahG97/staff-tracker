@@ -95,6 +95,14 @@ const viewRoles = () => {
     }
   );
 };
+// function to view all employees
+const viewEmployees = () => {
+  db.query('Select * FROM employee', (err, res) => {
+    if (err) throw err;
+    console.table(res);
+    startApp();
+  });
+};
 
 // Function to add a department
 const addDepartment = () => {
