@@ -21,7 +21,8 @@ The staff track is a tool made with node.js, inquirer and mySQL. It helps compan
 5. Update the database connection details (PORT) in the application code.
 
 ## Screenshot
-![ReadMe Gen Screenshot](./utils/assets/images/README.md-screenshot2.gif) https://aliahg97.github.io/staff-tracker/
+![ReadMe Gen Screenshot](./assets/images/Staff-tracker-screenshot.gif)
+https://aliahg97.github.io/staff-tracker/ View MP4 Video HERE: https://youtu.be/gT_5UK5kFbI
 
 
 ## Features
