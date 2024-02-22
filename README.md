@@ -1,184 +1,66 @@
-# staff-tracker
+# Staff-Tracker
 
-## Your Task
+## Description
+The staff track is a tool made with node.js, inquirer and mySQL. It helps companies keep track of their employees easily by letting them see and control departments, roles and workers. It's made to be simple for people who aren't tech experts to use. Instead of doing everything manually, like checking info or adding new employees, the staff tracker intergrates user inputs automatically via interactive menus. 
 
-Developers frequently have to create interfaces that allow non-developers to easily view and interact with information stored in databases. These interfaces are called **content management systems (CMS)**. Your assignment this week is to build a command-line application from scratch to manage a company's employee database, using Node.js, Inquirer, and MySQL.
+## Table of contents
+- [Installation](#installation)
+- [Screenshot](#screenshot)
+- [Features](#features)
+- [Usage](#usage)
+- [credits](#credits)
+- [License](#license)
+- [Contributing](#contributing)
 
-Because this Challenge will require the use of the `Inquirer` package, ensure that you install and use Inquirer version 8.2.4. To do so, use the following command in your project folder: `npm i inquirer@8.2.4`.
 
-Because this application won’t be deployed, you’ll also need to create a walkthrough video that demonstrates its functionality and all of the following acceptance criteria being met. You’ll need to submit a link to the video and add it to the README of your project.
+## Installation
+1. Copy and paste repo in terminal
+2. Git clone https://github.com/AliahG97/staff-tracker.git
+3. Run "npm install" to install the necessary dependencies, including inquirer version 8.2.4.
+4. Set up your mySQL database by importing the provided schema and seeds files.
+5. Update the database connection details (PORT) in the application code.
 
-## User Story
+## Screenshot
+![ReadMe Gen Screenshot](./utils/assets/images/README.md-screenshot2.gif) https://aliahg97.github.io/staff-tracker/
 
-```md
-AS A business owner
-I WANT to be able to view and manage the departments, roles, and employees in my company
-SO THAT I can organize and plan my business
-```
 
-## Acceptance Criteria
+## Features
 
-```md
-GIVEN a command-line application that accepts user input
-WHEN I start the application
-THEN I am presented with the following options: view all departments, view all roles, view all employees, add a department, add a role, add an employee, and update an employee role
-WHEN I choose to view all departments
-THEN I am presented with a formatted table showing department names and department ids
-WHEN I choose to view all roles
-THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
-WHEN I choose to view all employees
-THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
-WHEN I choose to add a department
-THEN I am prompted to enter the name of the department and that department is added to the database
-WHEN I choose to add a role
-THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
-WHEN I choose to add an employee
-THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
-WHEN I choose to update an employee role
-THEN I am prompted to select an employee to update and their new role and this information is updated in the database 
-```
+1. View All Departments: Users can see a format playing department names and their corresponding IDs.
 
-## Mock-Up
+2. View All Roles: Users are presented with a table showing job titles, role Ids, the department each role belongs to and the salary for each role.
 
-The following video shows an example of the application being used from the command line:
+3. View All Employees:Users can view a formatted table containing employee data, including employee ID's, first name, last name, job title, departments, salaries and their manager.
 
-[![A video thumbnail shows the command-line employee management application with a play button overlaying the view.](./Assets/12-sql-homework-video-thumbnail.png)](https://2u-20.wistia.com/medias/2lnle7xnpk)
+4. Add a Department: Users are prompted to enter the name of a new department and upon submission it is added to the database. 
 
-## Getting Started
+5. Add a Role: Users can add a new role by providing the name, salary and department for the role the entered information is then stored in the database.
 
-This Challenge will require a video submission. Refer to the [Fullstack Blog Video Submission Guide](https://coding-boot-camp.github.io/full-stack/computer-literacy/video-submission-guide) for additional guidance on creating a video.
+6. Add an Employee: Users are prompted to input the first name, last name, role and manager of a new employee. once entered the employee's information is added to the database.
 
-You’ll need to use the [MySQL2 package](https://www.npmjs.com/package/mysql2) to connect to your MySQL database and perform queries, and the [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4) to interact with the user via the command line.
+7. Update an Employee Role: Users Can select an employee to update and choose a new role for them. The application. the application then updates the employees role in the database.
 
-**Important**: You will be committing a file that contains your database credentials. Make sure that your MySQL password is not used for any other personal accounts, because it will be visible on GitHub. In upcoming lessons, you will learn how to better secure this password, or you can start researching npm packages now that could help you.
 
-You might also want to make your queries asynchronous. MySQL2 exposes a `.promise()` function on Connections to upgrade an existing non-Promise connection to use Promises. To learn more and make your queries asynchronous, refer to the [npm documentation on MySQL2](https://www.npmjs.com/package/mysql2).
+## Usage
+This app is ideal for employer or manger who wants to efficiently track and and update their staff roster information in the companies database.
 
-Design the database schema as shown in the following image:
+## Credits
+Aliah Guerra (https://github.com/AliahG97)
 
-![Database schema includes tables labeled “employee,” role,” and “department.”](./Assets/12-sql-homework-demo-01.png)
+## License
+Creative Commons License
+by Aliah Guerra2024. Confidential and Proprietary. All Rights Reserved.
 
-As the image illustrates, your schema should contain the following three tables:
+## Contributing
+- Add start dates and tenure of employees to easily see who should be considered for promotion to manager roles, and get salary increases.
 
-* `department`
+## Testing
+1. Cd to project file
+2. Npm install
+3. Node index.js
+4. Select a menu action
+5. Answer all questions prompted
+5. If new data was added or updated, return to view all (employee, departments or roles) to ensure the new date was added successfully
 
-    * `id`: `INT PRIMARY KEY`
 
-    * `name`: `VARCHAR(30)` to hold department name
 
-* `role`
-
-    * `id`: `INT PRIMARY KEY`
-
-    * `title`: `VARCHAR(30)` to hold role title
-
-    * `salary`: `DECIMAL` to hold role salary
-
-    * `department_id`: `INT` to hold reference to department role belongs to
-
-* `employee`
-
-    * `id`: `INT PRIMARY KEY`
-
-    * `first_name`: `VARCHAR(30)` to hold employee first name
-
-    * `last_name`: `VARCHAR(30)` to hold employee last name
-
-    * `role_id`: `INT` to hold reference to employee role
-
-    * `manager_id`: `INT` to hold reference to another employee that is the manager of the current employee (`null` if the employee has no manager)
-
-You might want to use a separate file that contains functions for performing specific SQL queries you'll need to use. A constructor function or class could be helpful for organizing these. You might also want to include a `seeds.sql` file to pre-populate your database, making the development of individual features much easier.
-
-## Bonus
-
-Try to add some additional functionality to your application, such as the ability to do the following:
-
-* Update employee managers.
-
-* View employees by manager.
-
-* View employees by department.
-
-* Delete departments, roles, and employees.
-
-* View the total utilized budget of a department&mdash;in other words, the combined salaries of all employees in that department.
-
-## Grading Requirements
-
-> **Note**: If a Challenge assignment submission is marked as “0”, it is considered incomplete and will not count towards your graduation requirements. Examples of incomplete submissions include the following:
->
-> * A repository that has no code
->
-> * A repository that includes a unique name but nothing else
->
-> * A repository that includes only a README file but nothing else
->
-> * A repository that only includes starter code
-
-This Challenge is graded based on the following criteria:
-
-### Deliverables: 10%
-
-* Your GitHub repository containing your application code.
-
-### Walkthrough Video: 27%
-
-* A walkthrough video that demonstrates the functionality of the employee tracker must be submitted, and a link to the video should be included in your README file.
-
-* The walkthrough video must show all of the technical acceptance criteria being met.
-
-* The walkthrough video must demonstrate how a user would invoke the application from the command line.
-
-* The walkthrough video must demonstrate a functional menu with the options outlined in the acceptance criteria.
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the preceding acceptance criteria plus the following:
-
-    * Uses the [Inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4).
-
-    * Uses the [MySQL2 package](https://www.npmjs.com/package/mysql2) to connect to a MySQL database.
-
-* Follows the table schema outlined in the Challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a high-quality README with description and a link to a walkthrough video.
-
-### Application Quality 10%
-
-* The application user experience is intuitive and easy to navigate.
-
-### Bonus
-
-Fulfilling any of the following can add up to 20 points to your grade. Note that the highest grade you can achieve is still 100:
-
-* Application allows users to update employee managers (2 points).
-
-* Application allows users to view employees by manager (2 points).
-
-* Application allows users to view employees by department (2 points).
-
-* Application allows users to delete departments, roles, and employees (2 points for each).
-
-* Application allows users to view the total utilized budget of a department&mdash;in other words, the combined salaries of all employees in that department (8 points).
-
-## Review
-
-You are required to submit BOTH of the following for review:
-
-* A walkthrough video demonstrating the functionality of the application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
-- - -
-© 2023 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
